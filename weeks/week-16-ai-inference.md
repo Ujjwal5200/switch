@@ -1,6 +1,11 @@
 # Week 16 — AI Inference + Final Integration
 
-**Goal:** Finish the product as an AI Product Engineering proof, not a frontend demo.
+**Dates:** 15–31 Dec 2026  
+**Priority:** **CORE / highest-value specialization**  
+**Target:** 10–14 hours + final integration
+
+## Objective
+Finish NextSwitch as an AI Product Engineering proof, not a frontend demo.
 
 ## Learn
 - RAG retrieval/reranking review
@@ -16,25 +21,50 @@
 - autoscaling
 - observability
 
-## Source
+## Sources
 - vLLM docs: https://docs.vllm.ai/
+- vLLM examples: https://docs.vllm.ai/en/latest/examples/
 - Hugging Face Transformers: https://huggingface.co/docs/transformers/
-- MLflow docs: https://mlflow.org/docs/latest/
+- MLflow: https://mlflow.org/docs/latest/
+
+Use a Hindi vLLM/LLM-serving video only as an introduction if terminology is unfamiliar. For actual implementation, use vLLM documentation because serving behavior, supported models and flags change quickly.
 
 ## Build
-Add one serious AI workflow to NextSwitch, for example:
-`resume + job description → retrieval → reranking → LLM structured score → persisted result → dashboard`.
+Add one serious AI workflow:
+`resume + JD → retrieval → reranking → LLM structured score → persistence → dashboard`
 
-Document:
-- architecture
-- latency
+Measure:
+- p50/p95 latency
 - token/model cost assumptions
-- failure modes
-- evaluation method
-- scaling bottlenecks
-- why each infrastructure choice was made
+- retrieval quality
+- failure rate
+- throughput
+- bottleneck
+
+## AI-engineering focus — EXTREME
+This is where system context matters most. You must reason about:
+- model selection vs quality/cost
+- sync vs async inference
+- batching
+- concurrency
+- GPU memory
+- caching
+- retries/timeouts
+- fallback models
+- rate limits
+- evaluation gates
+- autoscaling thresholds
+- observability
+
+## Architecture exercise
+Write a one-page decision record:
+1. Why this model?
+2. Why this retrieval strategy?
+3. Why this database/vector strategy?
+4. Why this serving stack?
+5. What is the cost/request assumption?
+6. What breaks first at 10× traffic?
+7. What changes at 100×?
 
 ## KPI / exit test
-You can explain the end-to-end request path, identify the most expensive/slow component, and propose a scaling or cost optimization without blindly adding infrastructure.
-
-**Time:** 10–14 hours + final integration.
+You can trace one request end-to-end, identify the slowest/most expensive component, and propose a measured optimization rather than blindly adding infrastructure.
