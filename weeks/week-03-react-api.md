@@ -1,33 +1,45 @@
 # Week 3 — React API Integration
 
-**Goal:** Make the frontend consume the kind of FastAPI services you already build.
+**Dates:** 15–21 Sep 2026  
+**Priority:** Supporting skill, but directly relevant to your FastAPI work  
+**Target:** 6–8 hours
+
+## Objective
+Make the frontend consume the kind of FastAPI services you already build.
 
 ## Learn
-- fetch and request lifecycle
+- fetch/request lifecycle
 - typed API clients
 - loading/error/empty states
 - form submission
-- optimistic UI concept
 - reusable components
 - custom hooks for API state
 - environment variables concept
-- basic client-side validation
+- client-side validation basics
+- CORS concept
 
-## Source
+## Sources
 - React Learn: https://react.dev/learn
-- Fetch MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-- React TypeScript: https://react.dev/learn/typescript
+- Fetch API (MDN): https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- React + TypeScript: https://react.dev/learn/typescript
+
+No long video is required. If a concept is unclear, search that exact concept in Hindi rather than starting another full React course.
 
 ## Build
-Connect a React page to a small FastAPI endpoint from your own local backend.
+Connect a React page to a local FastAPI endpoint:
 
-Flow:
-`React form → FastAPI → JSON → typed React state → UI`
+`React form → FastAPI → JSON → typed state → UI`
 
-## AI usage
-Ask AI to generate the API client and UI after you specify the endpoint contract. Review every type and error path.
+Use a real endpoint from your existing backend where possible.
+
+## AI workflow
+1. You define the OpenAPI/request-response contract.
+2. AI generates the client/UI.
+3. You inspect types, error paths, CORS, loading states and security assumptions.
+4. You test the complete request path.
 
 ## KPI / exit test
-You can take a FastAPI OpenAPI endpoint and independently explain how its request/response travels through React into the UI.
+Given a FastAPI endpoint, you can independently explain how the request reaches the backend and how the response becomes UI state.
 
-**Time:** 6–8 hours.
+## AI-engineering importance
+**High for integration judgment.** The difficult part is not JSX; it is deciding API boundaries, state ownership, failure handling and what belongs on client vs server.
