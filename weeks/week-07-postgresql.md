@@ -1,6 +1,11 @@
 # Week 7 — PostgreSQL Foundations
 
-**Goal:** Move beyond CRUD and understand the database decisions behind your AI services.
+**Dates:** 13–19 Oct 2026  
+**Priority:** **CORE**  
+**Target:** 8–10 hours
+
+## Objective
+Move beyond CRUD. Learn to make database decisions that affect AI-system latency, correctness, concurrency and cost.
 
 ## Learn
 - relational modeling
@@ -11,19 +16,43 @@
 - indexes
 - transactions
 - isolation basics
-- EXPLAIN basics
+- `EXPLAIN` basics
 - migrations
 
-## Source
-- PostgreSQL docs: https://www.postgresql.org/docs/
-- SQLBolt for fast interactive SQL practice: https://sqlbolt.com/
+## Video — Hindi first pass
+Search/use a current Hindi PostgreSQL full course from a high-view Indian educator only for the initial mental model. Do **not** treat the video as the authority; verify every feature in the official docs.
 
-Use Hindi YouTube only for the first conceptual pass if needed; use the official docs for the actual features you put into NextSwitch.
+Because YouTube rankings/views change and search results are unstable, the durable source is:
+- PostgreSQL docs: https://www.postgresql.org/docs/
+- SQLBolt interactive SQL: https://sqlbolt.com/
 
 ## Build
-Design schemas for users, jobs, resumes and candidate scores. Write joins and indexes for the main queries.
+Design NextSwitch schemas for:
+- users
+- jobs
+- resumes
+- candidates
+- candidate_scores
+
+Then write the important queries and indexes.
+
+### Engineering lab
+Create 100k+ candidate rows. Compare:
+1. query without index
+2. query with index
+3. query with a bad index
+
+Use `EXPLAIN ANALYZE` and record execution time.
+
+## AI-engineering focus — HIGH
+AI can generate SQL. **You must decide:**
+- schema boundaries
+- normalization vs denormalization
+- which indexes are justified
+- transaction boundaries
+- pagination strategy
+- consistency requirements
+- what data should never be duplicated
 
 ## KPI / exit test
-You can explain why each index exists, what a transaction protects, and how the main query uses the schema.
-
-**Time:** 8–10 hours.
+You can explain every important index, transaction boundary and query plan in NextSwitch.
