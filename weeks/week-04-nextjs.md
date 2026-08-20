@@ -1,35 +1,48 @@
 # Week 4 — Next.js Foundations
 
-**Goal:** Understand the modern App Router model.
+**Dates:** 22–28 Sep 2026  
+**Priority:** Supporting skill  
+**Target:** 7–9 hours
+
+## Objective
+Understand the modern Next.js App Router model. Do not learn the old Pages Router unless maintaining legacy code.
 
 ## Learn
-- App Router and `app/`
-- pages and layouts
-- nested routes
-- dynamic routes
+- `app/` router
+- pages/layouts
+- nested + dynamic routes
 - Server Components
 - Client Components
 - `use client`
 - navigation
-- loading and error UI
+- loading/error UI
 - metadata
 - basic data fetching
 
-## Source
-- Official Next.js Learn: https://nextjs.org/learn
-- Next.js Docs: https://nextjs.org/docs
+## Primary source
+**Official Next.js Learn:** https://nextjs.org/learn
 
-Use the official Learn course rather than an old Pages Router tutorial.
+Use the React Foundations and Next.js App Router sections needed for the topics above. The official course is preferred over old long YouTube courses because Next.js changes quickly.
+
+**Docs:** https://nextjs.org/docs
 
 ## Build
-Convert the candidate UI into a Next.js App Router application with:
+Convert the candidate UI into Next.js:
 - dashboard layout
-- candidate route
-- candidate detail dynamic route
+- `/candidates`
+- `/candidates/[id]`
 - loading state
 - error state
+- metadata
+
+## Critical concept
+For every component ask:
+- Does it need browser state/event handlers?
+- If not, can it remain a Server Component?
+- Where should data be fetched?
 
 ## KPI / exit test
-You can explain why a component is server or client and can create a nested/dynamic route without copying a tutorial.
+You can explain Server vs Client Components and create nested/dynamic routes without copying a tutorial.
 
-**Time:** 7–9 hours.
+## AI-engineering importance
+**Medium-high.** The syntax is easy to generate; server/client boundaries, data flow and security are engineering decisions.
