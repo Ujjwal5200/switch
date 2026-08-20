@@ -1,6 +1,11 @@
 # Week 12 — Kubernetes Core
 
-**Goal:** Deploy and operate the containerized application locally.
+**Dates:** 17–23 Nov 2026  
+**Priority:** **CORE**  
+**Target:** 8–10 hours
+
+## Objective
+Use your existing Kubernetes knowledge to operate the NextSwitch stack rather than rewatching beginner material.
 
 ## Learn
 - cluster/node/pod mental model
@@ -9,20 +14,34 @@
 - namespaces
 - ConfigMaps
 - Secrets
-- resource requests/limits
-- readiness/liveness probes
-- logs and basic debugging
+- requests/limits
+- readiness/liveness
+- logs/debugging
 
-## Source
+## Sources
 - Kubernetes Basics: https://kubernetes.io/docs/tutorials/kubernetes-basics/
 - Kubernetes docs: https://kubernetes.io/docs/home/
 
-Use your existing Kubernetes knowledge as the base; learn each concept by deploying NextSwitch components.
+Hindi video: use your existing Kubernetes playlist for only the exact missing concept. Do not restart a beginner playlist.
 
 ## Build
-Deploy FastAPI, Next.js and supporting services to a local cluster (kind/minikube).
+Deploy FastAPI + Next.js to kind/minikube.
+
+## Labs
+1. Kill a pod and observe recovery.
+2. Break a readiness probe.
+3. Change an image version and roll back.
+4. Set a CPU/memory limit and observe behavior.
+
+## AI-engineering focus — VERY HIGH
+AI can generate YAML. You decide:
+- service boundaries
+- resource sizing
+- readiness semantics
+- scaling triggers
+- failure recovery
+- config/secret separation
+- network exposure
 
 ## KPI / exit test
 You can deploy, expose, inspect logs, update and roll back a service without a tutorial.
-
-**Time:** 8–10 hours.
