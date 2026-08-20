@@ -1,26 +1,49 @@
 # Week 9 — Redis
 
-**Goal:** Know when Redis is useful in an AI product and when it is unnecessary.
+**Dates:** 27 Oct–2 Nov 2026  
+**Priority:** **CORE**  
+**Target:** 6–8 hours
+
+## Objective
+Know when Redis improves an AI product and when adding it only adds failure modes.
 
 ## Learn
 - key/value model
 - TTL
-- caching patterns
-- cache invalidation basics
+- cache-aside pattern
+- invalidation basics
 - sessions
 - rate limiting
-- lists/streams concept
-- pub/sub concept
-- queues and background jobs
+- queues/background jobs
+- pub/sub vs queues
+- Streams concept
 
-## Source
+## Sources
 - Redis University: https://university.redis.com/
 - Redis docs: https://redis.io/docs/latest/
 
+Use the Redis University introductory material first; use the docs for the exact commands/features you implement.
+
 ## Build
-Add one real use case to NextSwitch: cache candidate/job reads and add a TTL. Then add rate limiting to one API route or a lightweight background-job queue.
+1. Cache candidate/job reads with TTL.
+2. Add API rate limiting.
+3. Add one background job for an expensive operation (e.g. resume parsing).
+
+## Engineering lab
+Test Redis failure:
+- What happens when cache is down?
+- Does the API fail closed or fall back to PostgreSQL?
+- What happens to a queued job?
+
+## AI-engineering focus — VERY HIGH
+AI can write Redis code. **You decide:**
+- cache vs source of truth
+- TTL
+- invalidation strategy
+- idempotency
+- retry behavior
+- queue vs synchronous request
+- failure fallback
 
 ## KPI / exit test
-You can explain what belongs in PostgreSQL vs Redis and what happens when Redis is unavailable.
-
-**Time:** 6–8 hours.
+You can justify every Redis use in NextSwitch and explain its failure behavior.
