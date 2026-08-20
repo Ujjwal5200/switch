@@ -1,27 +1,54 @@
 # Week 8 — PostgreSQL + FastAPI Integration
 
-**Goal:** Make the database layer production-shaped rather than tutorial-shaped.
+**Dates:** 20–26 Oct 2026  
+**Priority:** **CORE**  
+**Target:** 8–10 hours
+
+## Objective
+Turn the database layer into something production-shaped.
 
 ## Learn
-- SQLAlchemy 2.x basics
+- SQLAlchemy 2.x
 - Pydantic schemas vs DB models
 - repository/service separation
-- migrations with Alembic
+- Alembic migrations
 - connection pooling
 - pagination
 - filtering/sorting
-- transactions in FastAPI
+- transaction handling
 - N+1 query problem
 
-## Source
+## Sources
+- FastAPI SQL databases: https://fastapi.tiangolo.com/tutorial/sql-databases/
 - SQLAlchemy: https://docs.sqlalchemy.org/
 - Alembic: https://alembic.sqlalchemy.org/
-- FastAPI SQL databases: https://fastapi.tiangolo.com/tutorial/sql-databases/
+
+No long video is required because you already know FastAPI. Use a Hindi tutorial only when a SQLAlchemy/Alembic concept blocks you, then verify against the docs.
 
 ## Build
-Connect NextSwitch FastAPI to PostgreSQL with migrations. Implement candidate CRUD, filtering and pagination.
+Implement:
+`Next.js → FastAPI → service/repository → PostgreSQL`
+
+Features:
+- candidate CRUD
+- filtering
+- sorting
+- pagination
+- Alembic migrations
+- transaction for score update
+
+## Engineering lab
+Create an N+1 query deliberately, measure it, then fix it. Record the before/after query count and latency.
+
+## AI-engineering focus — VERY HIGH
+AI can generate SQLAlchemy models. Your job is deciding:
+- service boundaries
+- transaction boundaries
+- query shape
+- pagination method
+- failure behavior
+- connection-pool sizing assumptions
+- what should be synchronous vs background work
 
 ## KPI / exit test
-Restarting the project from an empty DB should recreate the schema through migrations, and the API should handle pagination/filtering without loading everything into memory.
-
-**Time:** 8–10 hours.
+A fresh database can be recreated entirely through migrations, and the API does not load unbounded result sets into memory.
