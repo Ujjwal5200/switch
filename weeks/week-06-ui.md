@@ -1,19 +1,23 @@
 # Week 6 — Tailwind CSS + shadcn/ui
 
-**Goal:** Produce a usable, responsive UI without becoming a CSS specialist.
+**Dates:** 6–12 Oct 2026  
+**Priority:** Supporting skill / fast track  
+**Target:** 5–7 hours
+
+## Objective
+Produce a clean responsive UI without becoming a CSS specialist.
 
 ## Learn
-Tailwind:
+### Tailwind
 - flex/grid
-- spacing
-- sizing
+- spacing/sizing
 - typography
 - borders/radius
 - responsive breakpoints
 - positioning
-- states
+- hover/focus states
 
-shadcn/ui:
+### shadcn/ui
 - Button
 - Input
 - Card
@@ -25,16 +29,26 @@ shadcn/ui:
 - Toast
 - Sidebar
 
-## Source
+## Sources
 - Tailwind docs: https://tailwindcss.com/docs
 - shadcn/ui docs: https://ui.shadcn.com/docs
 
-Use docs + AI. Do not watch a long course unless a concept blocks you.
+Use docs + AI. Do not spend days on a long CSS course.
 
 ## Build
-Create a professional dashboard for NextSwitch using shadcn components and responsive Tailwind layouts.
+Create a responsive NextSwitch dashboard with:
+- sidebar
+- candidate table
+- score cards
+- filters
+- modal/detail panel
+- mobile layout
+
+## AI usage
+Give AI the layout requirements and component constraints. Let it generate classes/components. You inspect responsiveness and accessibility.
 
 ## KPI / exit test
-Build desktop + mobile versions of the dashboard and understand enough of every generated class to modify layout, spacing and responsiveness.
+You can modify generated Tailwind classes for layout, spacing and responsive behavior without needing AI for every change.
 
-**Time:** 5–7 hours.
+## AI-engineering importance
+**Low.** UI styling is implementation leverage. Spend your deeper thinking time on backend/API/AI/infrastructure decisions.
