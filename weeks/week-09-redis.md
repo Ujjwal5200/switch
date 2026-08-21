@@ -1,49 +1,32 @@
-# Week 9 — Redis
+# Week 9 — Kubernetes Core for AI APIs
 
-**Dates:** 27 Oct–2 Nov 2026  
-**Priority:** **CORE**  
-**Target:** 6–8 hours
-
-## Objective
-Know when Redis improves an AI product and when adding it only adds failure modes.
+**Dates:** 16–22 Oct 2026  
+**Priority:** P0  
+**Time:** 10–12 hours
 
 ## Learn
-- key/value model
-- TTL
-- cache-aside pattern
-- invalidation basics
-- sessions
-- rate limiting
-- queues/background jobs
-- pub/sub vs queues
-- Streams concept
+- Pods
+- Deployments
+- Services
+- Ingress
+- ConfigMaps/Secrets
+- requests/limits
+- readiness/liveness
+- namespaces
+- rolling updates
 
 ## Sources
-- Redis University: https://university.redis.com/
-- Redis docs: https://redis.io/docs/latest/
-
-Use the Redis University introductory material first; use the docs for the exact commands/features you implement.
+- Kubernetes Basics: https://kubernetes.io/docs/tutorials/kubernetes-basics/
+- Workloads: https://kubernetes.io/docs/concepts/workloads/
 
 ## Build
-1. Cache candidate/job reads with TTL.
-2. Add API rate limiting.
-3. Add one background job for an expensive operation (e.g. resume parsing).
+Deploy FastAPI + worker + Redis to a local Kubernetes cluster (kind/minikube).
 
-## Engineering lab
-Test Redis failure:
-- What happens when cache is down?
-- Does the API fail closed or fall back to PostgreSQL?
-- What happens to a queued job?
+## Failure lab
+Kill a pod. Break a readiness probe. Exceed resource limits. Observe recovery.
 
-## AI-engineering focus — VERY HIGH
-AI can write Redis code. **You decide:**
-- cache vs source of truth
-- TTL
-- invalidation strategy
-- idempotency
-- retry behavior
-- queue vs synchronous request
-- failure fallback
+## KPI
+Explain the request path and why each Kubernetes object exists.
 
-## KPI / exit test
-You can justify every Redis use in NextSwitch and explain its failure behavior.
+## AI-engineering focus
+EXTREME: Kubernetes is being learned as an AI workload platform, not as a certification checklist.
