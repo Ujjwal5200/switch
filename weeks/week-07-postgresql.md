@@ -1,58 +1,33 @@
-# Week 7 — PostgreSQL Foundations
+# Week 7 — Docker for Production AI Services
 
-**Dates:** 13–19 Oct 2026  
-**Priority:** **CORE**  
-**Target:** 8–10 hours
-
-## Objective
-Move beyond CRUD. Learn to make database decisions that affect AI-system latency, correctness, concurrency and cost.
+**Dates:** 2–8 Oct 2026  
+**Priority:** P0  
+**Time:** 8–10 hours
 
 ## Learn
-- relational modeling
-- primary/foreign keys
-- one-to-many/many-to-many
-- joins
-- constraints
-- indexes
-- transactions
-- isolation basics
-- `EXPLAIN` basics
-- migrations
+- image vs container
+- Dockerfile
+- multi-stage builds
+- networks/volumes
+- environment/secrets handling
+- health checks
+- Compose
+- container resource limits
+- image size/security basics
 
-## Video — Hindi first pass
-Search/use a current Hindi PostgreSQL full course from a high-view Indian educator only for the initial mental model. Do **not** treat the video as the authority; verify every feature in the official docs.
+## Source
+Docker getting started: https://docs.docker.com/get-started/
 
-Because YouTube rankings/views change and search results are unstable, the durable source is:
-- PostgreSQL docs: https://www.postgresql.org/docs/
-- SQLBolt interactive SQL: https://sqlbolt.com/
+Hindi optional: use a recent Hindi Docker course only for first-pass terminology; then use Docker docs for implementation.
 
 ## Build
-Design NextSwitch schemas for:
-- users
-- jobs
-- resumes
-- candidates
-- candidate_scores
+Containerize NextSwitch API + worker + PostgreSQL + Redis. Use Compose for local orchestration.
 
-Then write the important queries and indexes.
+## Failure lab
+Kill/restart a worker and database. Verify health checks and recovery behavior.
 
-### Engineering lab
-Create 100k+ candidate rows. Compare:
-1. query without index
-2. query with index
-3. query with a bad index
+## KPI
+One command starts the local production-shaped stack and you can explain each container boundary.
 
-Use `EXPLAIN ANALYZE` and record execution time.
-
-## AI-engineering focus — HIGH
-AI can generate SQL. **You must decide:**
-- schema boundaries
-- normalization vs denormalization
-- which indexes are justified
-- transaction boundaries
-- pagination strategy
-- consistency requirements
-- what data should never be duplicated
-
-## KPI / exit test
-You can explain every important index, transaction boundary and query plan in NextSwitch.
+## AI-engineering focus
+High: container boundaries and resource limits matter more than Docker syntax.
