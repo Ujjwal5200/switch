@@ -1,57 +1,30 @@
-# Week 2 — React Fundamentals
+# Week 2 — React + Next.js Fast Track
 
-**Dates:** 8–14 Sep 2026  
-**Priority:** Supporting skill / fast track  
-**Target:** 7–10 hours
-
-## Objective
-Understand the React mental model well enough to direct AI-generated UI and debug it.
+**Dates:** 28 Aug–3 Sep 2026  
+**Priority:** P1  
+**Time:** 5–7 hours
 
 ## Learn
-- JSX/TSX
-- components + composition
-- props
-- state + `useState`
-- events
+- Components/JSX
+- props/state
+- useState/useEffect
+- forms/events
 - conditional rendering
-- lists/keys
-- forms/controlled inputs
-- `useEffect` basics
-- `useRef` basics
-- custom hooks basics
-- Context basics
+- API calls
+- Server vs Client Components concept
+- basic routing
 
-## Primary video — Sheryians Coding School
-**ReactJS Full Course:**
-https://www.youtube.com/watch?v=3LRZRSIh_KE
+## Source
+Sheryians React course: https://www.youtube.com/watch?v=3LRZRSIh_KE
+Watch only Components, Props, Hooks, State, Forms, API Calls, useEffect, Router and Context sections. Skip projects.
 
-Do **not** watch the entire long course. Prioritize:
-- Components: ~01:06
-- Props: ~01:26
-- Hooks: ~04:56
-- State: ~05:12
-- Forms: ~05:55
-- API calls: ~07:33
-- `useEffect`: ~07:54
-- Routing: ~09:15
-- Context API: ~10:36
-
-Skip repeated project-building once the concept is understood.
-
-**Reference:** https://react.dev/learn
+Official React TS reference: https://react.dev/learn/typescript
 
 ## Build
-`candidate-ui/`:
-- CandidateCard
-- CandidateList
-- Search/filter
-- Add-candidate form
-- loading/error/empty states
+One candidate dashboard: table + search + API loading/error/empty states.
 
-First design the component tree yourself. Then ask AI to implement repetitive TSX/CSS.
+## KPI
+Build and modify a React screen with AI assistance without getting blocked by basic component/state/API concepts.
 
-## KPI / exit test
-You can explain why state lives where it does, what causes a render, and how props move through the component tree.
-
-## AI-engineering importance
-**Medium-low.** Understand the mental model; let AI write repetitive UI code.
+## AI-engineering focus
+Low. AI writes most UI boilerplate. You own API contract and UX state handling.
