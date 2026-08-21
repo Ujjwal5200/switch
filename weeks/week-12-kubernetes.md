@@ -1,47 +1,34 @@
-# Week 12 — Kubernetes Core
+# Week 12 — AWS + Kubernetes Deployment
 
-**Dates:** 17–23 Nov 2026  
-**Priority:** **CORE**  
-**Target:** 8–10 hours
-
-## Objective
-Use your existing Kubernetes knowledge to operate the NextSwitch stack rather than rewatching beginner material.
+**Dates:** 6–12 Nov 2026  
+**Priority:** P0  
+**Time:** 10–12 hours
 
 ## Learn
-- cluster/node/pod mental model
-- Deployments
-- Services
-- namespaces
-- ConfigMaps
-- Secrets
-- requests/limits
-- readiness/liveness
-- logs/debugging
+- ECR → workload image flow
+- EKS architecture
+- ALB/Ingress
+- IAM for workloads
+- RDS connectivity
+- S3 access
+- CloudWatch
+- secrets/configuration
+- cost controls
 
 ## Sources
-- Kubernetes Basics: https://kubernetes.io/docs/tutorials/kubernetes-basics/
-- Kubernetes docs: https://kubernetes.io/docs/home/
-
-Hindi video: use your existing Kubernetes playlist for only the exact missing concept. Do not restart a beginner playlist.
+- EKS docs: https://docs.aws.amazon.com/eks/
+- EKS Workshop: https://www.eksworkshop.com/
 
 ## Build
-Deploy FastAPI + Next.js to kind/minikube.
+Target: Internet → ALB → EKS → FastAPI → RDS/Redis/S3.
 
-## Labs
-1. Kill a pod and observe recovery.
-2. Break a readiness probe.
-3. Change an image version and roll back.
-4. Set a CPU/memory limit and observe behavior.
+If EKS cost/permissions are unavailable, deploy the same service on ECS and document the trade-off.
 
-## AI-engineering focus — VERY HIGH
-AI can generate YAML. You decide:
-- service boundaries
-- resource sizing
-- readiness semantics
-- scaling triggers
-- failure recovery
-- config/secret separation
-- network exposure
+## Failure lab
+Remove a permission, kill a pod, make the DB unreachable. Document detection and recovery.
 
-## KPI / exit test
-You can deploy, expose, inspect logs, update and roll back a service without a tutorial.
+## KPI
+Trace one request end-to-end and explain the security/network/data path.
+
+## AI-engineering focus
+EXTREME.
