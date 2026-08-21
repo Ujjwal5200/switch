@@ -1,82 +1,50 @@
-# Switch — AI Product Engineering Roadmap
+# Switch — Production AI Engineering Roadmap
 
-A focused Aug–Dec 2026 plan to become an **AI Product Engineer** who can take an AI feature from architecture → backend/API → AI pipeline → frontend → deployment → scaling → observability → cost control.
+**Goal:** By 31 Dec 2026, become a strong early-career AI Product/Systems Engineer: able to design, build, deploy, observe, scale and cost-optimize AI systems. Frontend is a supporting skill, not the specialization.
 
-## 🚨 Start here — priority order
+## Priority
 
-### P0 — Career-critical
+### P0 — deep
+1. AI/LLM engineering: RAG, evaluation, inference, agents/tools, model selection.
+2. Backend: Python/FastAPI, async, API contracts, retries, timeouts, idempotency, testing.
+3. Distributed systems: queues, workers, caching, rate limits, backpressure, consistency, failure isolation.
+4. PostgreSQL: schema, indexes, EXPLAIN, transactions, pooling, query performance.
+5. Kubernetes for AI: workloads, resources, HPA, GPU scheduling concepts, model serving, failure recovery.
+6. AWS: IAM, VPC, S3, RDS, ECR, ALB, EKS/ECS, CloudWatch, cost.
+7. Performance/cost/observability.
+8. System design + interview reasoning.
 
-1. **AI/LLM engineering:** RAG, retrieval/reranking, structured outputs, agents/tools, evaluation, guardrails, model selection, inference.
-2. **Backend/API:** Python, FastAPI, async/concurrency, API contracts, auth, validation, jobs, retries, timeouts, idempotency, testing.
-3. **System design/orchestration:** service boundaries, sync vs async, queues, caching, rate limits, failure isolation, consistency and reliability.
-4. **PostgreSQL:** schema design, indexes, EXPLAIN, transactions, pooling, migrations, query performance.
-5. **Docker + Kubernetes:** containers, probes, resources, deployments, services, HPA, rolling updates, debugging and failure recovery.
-6. **AWS:** IAM, VPC, S3, RDS, ECR, ALB, ECS/EKS, CloudWatch and cost.
-7. **Performance/cost:** latency, throughput, concurrency, bottlenecks, batching, caching, model cost, resource utilization.
+### P1 — competent
+Redis, CI/CD, TypeScript, React, Next.js, Tailwind, shadcn/ui.
 
-### P1 — Important supporting skills
+### P2 — defer
+Advanced frontend internals/CSS/animation, every AWS service, every Kubernetes add-on, framework memorization.
 
-- Redis
-- CI/CD
-- TypeScript
-- React
-- Next.js
-- Tailwind
-- shadcn/ui
-
-### P2 — Do not over-invest yet
-
-Advanced CSS, animations, deep browser internals, learning every AWS service, learning every Kubernetes add-on, and memorizing framework APIs.
-
-## 🔥 Priority project
-
-**[AI Candidate Intelligence Platform](projects/PRIORITY-PROJECT.md)**
-
-This is the flagship project. Do not stop at the MVP. Progressively turn it into a production-shaped AI system.
-
-## 📈 Priority scaling exercise
-
-**[0 → 10,000+ Scaling Lab](docs/SCALING-LAB.md)**
-
-Start with a simple API. Measure it. Find the bottleneck. Then progressively introduce PostgreSQL optimization, Redis, async workers, Docker, Kubernetes, autoscaling and AWS.
-
-Do **not** claim "1 million users" without defining the workload. Convert users into active users → requests/sec → concurrency → resource/model/database load.
-
-## 🎯 What you must be able to demonstrate
-
-By December, you should be able to take an AI requirement and independently produce:
-
-`requirements → architecture → API contract → data model → AI workflow → async orchestration → reliability strategy → deployment → load test → bottleneck analysis → scaling plan → cost analysis`
-
-AI can write much of the implementation. **You own the engineering decisions.**
-
-## 📚 Core documents
-
+## Start here
+- [MASTER CHECKLIST](docs/MASTER-CHECKLIST.md)
 - [Core priorities](docs/CORE-PRIORITIES.md)
-- [Priority projects](projects/README.md)
-- [Resource map](RESOURCES.md)
+- [AI systems interview mastery](docs/INTERVIEW-MASTERY.md)
+- [Scaling lab](docs/SCALING-LAB.md)
+- [Priority project](projects/PRIORITY-PROJECT.md)
+- [Resources](RESOURCES.md)
 
-## 📅 Weekly roadmap
+## Weekly roadmap
 
-- [Week 1 — JavaScript + TypeScript](weeks/week-01-js-typescript.md)
-- [Week 2 — React fundamentals](weeks/week-02-react.md)
-- [Week 3 — React API integration](weeks/week-03-react-api.md)
-- [Week 4 — Next.js foundations](weeks/week-04-nextjs.md)
-- [Week 5 — Next.js application patterns](weeks/week-05-nextjs-app.md)
-- [Week 6 — Tailwind + shadcn/ui](weeks/week-06-ui.md)
-- [Week 7 — PostgreSQL foundations](weeks/week-07-postgresql.md)
-- [Week 8 — PostgreSQL + FastAPI](weeks/week-08-postgres-fastapi.md)
-- [Week 9 — Redis](weeks/week-09-redis.md)
-- [Week 10 — Docker](weeks/week-10-docker.md)
-- [Week 11 — CI/CD](weeks/week-11-cicd.md)
-- [Week 12 — Kubernetes core](weeks/week-12-kubernetes.md)
-- [Week 13 — Kubernetes production](weeks/week-13-kubernetes-production.md)
-- [Week 14 — AWS foundations](weeks/week-14-aws.md)
-- [Week 15 — AWS + Kubernetes](weeks/week-15-aws-kubernetes.md)
-- [Week 16 — AI inference + vLLM](weeks/week-16-ai-inference.md)
+1. [Week 1 — Frontend literacy fast-track](weeks/week-01-js-typescript.md)
+2. [Week 2 — React/Next.js fast-track](weeks/week-02-react.md)
+3. [Week 3 — PostgreSQL performance](weeks/week-03-react-api.md)
+4. [Week 4 — Redis + caching](weeks/week-04-nextjs.md)
+5. [Week 5 — Distributed systems fundamentals](weeks/week-05-nextjs-app.md)
+6. [Week 6 — Async APIs + queues](weeks/week-06-ui.md)
+7. [Week 7 — Docker + production containers](weeks/week-07-postgresql.md)
+8. [Week 8 — CI/CD + deployment](weeks/week-08-postgres-fastapi.md)
+9. [Week 9 — Kubernetes core for AI APIs](weeks/week-09-redis.md)
+10. [Week 10 — Kubernetes scaling/failure labs](weeks/week-10-docker.md)
+11. [Week 11 — AWS architecture](weeks/week-11-cicd.md)
+12. [Week 12 — AWS + Kubernetes deployment](weeks/week-12-kubernetes.md)
+13. [Week 13 — RAG scaling](weeks/week-13-kubernetes-production.md)
+14. [Week 14 — AI evaluation + monitoring](weeks/week-14-aws.md)
+15. [Week 15 — LLM inference/vLLM](weeks/week-15-aws-kubernetes.md)
+16. [Week 16 — End-to-end scale/cost capstone](weeks/week-16-ai-inference.md)
 
-## Rule for the whole roadmap
-
-**Learn only enough theory to make a correct engineering decision. Then build, measure, break, debug and document.**
-
-For frontend, use AI aggressively. For architecture, security, reliability, scaling and cost, do the reasoning yourself and use AI as a reviewer—not as the decision maker.
+**Rule:** Learn enough theory to make a correct decision. Then build → measure → break → debug → document. Use AI heavily for implementation; own architecture, security, reliability, scaling and cost decisions.
