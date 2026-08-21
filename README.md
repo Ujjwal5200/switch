@@ -2,6 +2,18 @@
 
 **Goal:** By 31 Dec 2026, become a strong early-career AI Product/Systems Engineer: able to design, build, deploy, observe, scale and cost-optimize AI systems. Frontend is a supporting skill, not the specialization.
 
+## Current execution
+
+- **Canonical daily track:** [EXECUTION TRACK](docs/EXECUTION-TRACK.md)
+- **Master plan:** [MASTER CHECKLIST](docs/MASTER-CHECKLIST.md)
+- **Core priorities:** [CORE PRIORITIES](docs/CORE-PRIORITIES.md)
+- **AI systems interview mastery:** [INTERVIEW MASTERY](docs/INTERVIEW-MASTERY.md)
+- **Scaling lab:** [SCALING LAB](docs/SCALING-LAB.md)
+- **Priority project:** [AI Candidate Intelligence Platform](projects/PRIORITY-PROJECT.md)
+- **Resources:** [RESOURCES](RESOURCES.md)
+
+> **Important:** the `weeks/` directory contains the earlier 16-week sequence. The roadmap was later rebalanced toward production AI engineering. Follow `MASTER-CHECKLIST.md` and `EXECUTION-TRACK.md` as the current source of truth.
+
 ## Priority
 
 ### P0 — deep
@@ -20,31 +32,14 @@ Redis, CI/CD, TypeScript, React, Next.js, Tailwind, shadcn/ui.
 ### P2 — defer
 Advanced frontend internals/CSS/animation, every AWS service, every Kubernetes add-on, framework memorization.
 
-## Start here
-- [MASTER CHECKLIST](docs/MASTER-CHECKLIST.md)
-- [Core priorities](docs/CORE-PRIORITIES.md)
-- [AI systems interview mastery](docs/INTERVIEW-MASTERY.md)
-- [Scaling lab](docs/SCALING-LAB.md)
-- [Priority project](projects/PRIORITY-PROJECT.md)
-- [Resources](RESOURCES.md)
+## Engineering rule
+
+Learn → build → break → measure → explain → document.
+
+Use AI heavily for implementation. Own architecture, security, reliability, scaling, evaluation and cost decisions.
 
 ## Weekly roadmap
 
-1. [Week 1 — Frontend literacy fast-track](weeks/week-01-js-typescript.md)
-2. [Week 2 — React/Next.js fast-track](weeks/week-02-react.md)
-3. [Week 3 — PostgreSQL performance](weeks/week-03-react-api.md)
-4. [Week 4 — Redis + caching](weeks/week-04-nextjs.md)
-5. [Week 5 — Distributed systems fundamentals](weeks/week-05-nextjs-app.md)
-6. [Week 6 — Async APIs + queues](weeks/week-06-ui.md)
-7. [Week 7 — Docker + production containers](weeks/week-07-postgresql.md)
-8. [Week 8 — CI/CD + deployment](weeks/week-08-postgres-fastapi.md)
-9. [Week 9 — Kubernetes core for AI APIs](weeks/week-09-redis.md)
-10. [Week 10 — Kubernetes scaling/failure labs](weeks/week-10-docker.md)
-11. [Week 11 — AWS architecture](weeks/week-11-cicd.md)
-12. [Week 12 — AWS + Kubernetes deployment](weeks/week-12-kubernetes.md)
-13. [Week 13 — RAG scaling](weeks/week-13-kubernetes-production.md)
-14. [Week 14 — AI evaluation + monitoring](weeks/week-14-aws.md)
-15. [Week 15 — LLM inference/vLLM](weeks/week-15-aws-kubernetes.md)
-16. [Week 16 — End-to-end scale/cost capstone](weeks/week-16-ai-inference.md)
+See [MASTER-CHECKLIST](docs/MASTER-CHECKLIST.md) for the current calendar and exit gates.
 
-**Rule:** Learn enough theory to make a correct decision. Then build → measure → break → debug → document. Use AI heavily for implementation; own architecture, security, reliability, scaling and cost decisions.
+The current flagship project is the **AI Candidate Intelligence Platform**: resume + JD → filtering → retrieval → reranking → structured LLM scoring → persistence → API → UI, progressively hardened with async processing, caching, Docker, Kubernetes, AWS, observability, scaling and inference work.
