@@ -1,52 +1,31 @@
-# Week 15 — AWS + Kubernetes Deployment
+# Week 15 — LLM Inference + vLLM
 
-**Dates:** 8–14 Dec 2026  
-**Priority:** **CORE**  
-**Target:** 8–10 hours
-
-## Objective
-Connect Kubernetes knowledge to real cloud infrastructure.
+**Dates:** 27 Nov–3 Dec 2026  
+**Priority:** P0 / highest-value specialization  
+**Time:** 10–12 hours
 
 ## Learn
-- ECR → Kubernetes image flow
-- EKS architecture
-- ALB/Ingress integration
-- IAM for workloads
-- RDS connectivity
-- S3 access patterns
-- CloudWatch logging/metrics
-- cost controls/cleanup
+- serving architecture
+- latency vs throughput
+- concurrency
+- KV cache
+- continuous batching concept
+- quantization
+- GPU memory
+- model selection
+- autoscaling
+- fallback models
 
 ## Sources
-- EKS docs: https://docs.aws.amazon.com/eks/
-- EKS Workshop: https://www.eksworkshop.com/
-- AWS Well-Architected: https://aws.amazon.com/architecture/well-architected/
-
-Hindi video is optional here. Prefer the official EKS workshop because this is an integration problem, not a vocabulary problem.
+- vLLM docs: https://docs.vllm.ai/
+- vLLM examples: https://docs.vllm.ai/en/latest/examples/
+- Transformers: https://huggingface.co/docs/transformers/
 
 ## Build
-Target:
-`Internet → ALB → EKS → FastAPI → RDS/Redis/S3`
+Serve a model locally with vLLM where hardware permits. Compare direct/API inference vs served inference for latency and throughput.
 
-If EKS cost/permissions are unavailable, reproduce the architecture locally and deploy the backend to ECS. Document the trade-off.
+## KPI
+Explain what limits throughput, what consumes GPU memory, and when batching/quantization/model changes are justified.
 
-## Engineering lab
-Measure:
-- deployment time
-- request latency
-- resource usage
-- monthly cost estimate
-- failure recovery
-
-## AI-engineering focus — EXTREMELY HIGH
-AI can generate manifests/Terraform. You own:
-- topology
-- IAM boundaries
-- networking
-- autoscaling
-- cost controls
-- observability
-- failure recovery
-
-## KPI / exit test
-You can explain the complete request path from internet → load balancer → workload → data/AI services and defend the architecture.
+## AI-engineering focus
+EXTREME. This is the bridge from LLM application engineering to inference engineering.
