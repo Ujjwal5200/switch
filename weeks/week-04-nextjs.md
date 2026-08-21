@@ -1,48 +1,31 @@
-# Week 4 — Next.js Foundations
+# Week 4 — Redis + Caching
 
-**Dates:** 22–28 Sep 2026  
-**Priority:** Supporting skill  
-**Target:** 7–9 hours
-
-## Objective
-Understand the modern Next.js App Router model. Do not learn the old Pages Router unless maintaining legacy code.
+**Dates:** 11–17 Sep 2026  
+**Priority:** P0  
+**Time:** 8–10 hours
 
 ## Learn
-- `app/` router
-- pages/layouts
-- nested + dynamic routes
-- Server Components
-- Client Components
-- `use client`
-- navigation
-- loading/error UI
-- metadata
-- basic data fetching
+- cache-aside pattern
+- TTL/invalidation
+- cache stampede
+- hot keys
+- rate limiting
+- sessions
+- Redis data structures
+- when NOT to cache
 
-## Primary source
-**Official Next.js Learn:** https://nextjs.org/learn
-
-Use the React Foundations and Next.js App Router sections needed for the topics above. The official course is preferred over old long YouTube courses because Next.js changes quickly.
-
-**Docs:** https://nextjs.org/docs
+## Sources
+- Redis docs: https://redis.io/docs/latest/
+- Redis caching tutorial: https://redis.io/docs/latest/develop/get-started/
 
 ## Build
-Convert the candidate UI into Next.js:
-- dashboard layout
-- `/candidates`
-- `/candidates/[id]`
-- loading state
-- error state
-- metadata
+Add Redis caching to candidate search. Measure DB latency and cache hit/miss. Add a rate limiter.
 
-## Critical concept
-For every component ask:
-- Does it need browser state/event handlers?
-- If not, can it remain a Server Component?
-- Where should data be fetched?
+## Failure lab
+Turn Redis off. Decide whether requests fail, bypass cache or degrade gracefully.
 
-## KPI / exit test
-You can explain Server vs Client Components and create nested/dynamic routes without copying a tutorial.
+## KPI
+Explain cache invalidation, stale data risk and why Redis improves the chosen workload.
 
-## AI-engineering importance
-**Medium-high.** The syntax is easy to generate; server/client boundaries, data flow and security are engineering decisions.
+## AI-engineering focus
+High: cache placement, TTL and failure behavior are architecture decisions.
