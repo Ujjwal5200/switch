@@ -1,52 +1,30 @@
-# Week 11 — CI/CD + Production Hygiene
+# Week 11 — AWS Architecture for AI Systems
 
-**Dates:** 10–16 Nov 2026  
-**Priority:** **CORE**  
-**Target:** 6–8 hours
-
-## Objective
-Make changes repeatable, testable and deployable before Kubernetes.
+**Dates:** 30 Oct–5 Nov 2026  
+**Priority:** P0  
+**Time:** 10–12 hours
 
 ## Learn
-- GitHub Actions basics
-- lint/typecheck
-- unit/API tests
-- build artifacts/images
-- Docker image tagging
-- secrets management
-- deployment environments
-- rollback concept
+- IAM
+- VPC/subnets/security groups
+- ALB
+- ECR
+- S3
+- RDS
+- CloudWatch
+- ECS vs EKS decision
+- cost estimation
 
 ## Sources
-- GitHub Actions docs: https://docs.github.com/en/actions
-- GitHub Actions quickstart: https://docs.github.com/en/actions/get-started/quickstart
-- FastAPI testing: https://fastapi.tiangolo.com/tutorial/testing/
-
-If you want a Hindi video, search for a current GitHub Actions beginner tutorial and watch only workflow YAML, triggers, jobs, secrets and Docker build/push. Verify syntax against the official docs because Actions examples change.
+- AWS Architecture Center: https://aws.amazon.com/architecture/
+- AWS Well-Architected: https://aws.amazon.com/architecture/well-architected/
+- AWS learning: https://builder.aws.com/learn
 
 ## Build
-Pipeline:
-`push → test → typecheck/lint → build → Docker image`
+Draw a production architecture for NextSwitch. Deploy a low-cost component to AWS.
 
-Use a matrix only if you actually need multiple runtimes.
+## KPI
+Explain the network/request path, IAM boundaries, data placement and expected cost drivers.
 
-## Failure lab
-Make the pipeline fail deliberately:
-- failing test
-- type error
-- Docker build failure
-- missing secret
-
-Document how the failure is surfaced and fixed.
-
-## AI-engineering focus — HIGH
-The hard part is deciding:
-- what must block deployment
-- environment separation
-- image/version strategy
-- rollback point
-- secret boundaries
-- migration ordering
-
-## KPI / exit test
-A bad test/build blocks the pipeline; a successful commit creates a traceable image/artifact.
+## AI-engineering focus
+EXTREME: architecture, security and cost decisions cannot be delegated to AI.
