@@ -1,70 +1,32 @@
-# Week 16 — AI Inference + Final Integration
+# Week 16 — Final AI Systems Capstone
 
-**Dates:** 15–31 Dec 2026  
-**Priority:** **CORE / highest-value specialization**  
-**Target:** 10–14 hours + final integration
+**Priority:** P0 / final proof
 
-## Objective
-Finish NextSwitch as an AI Product Engineering proof, not a frontend demo.
+## Project
+AI Candidate Intelligence Platform:
+`Next.js → FastAPI → queue → workers → PostgreSQL/Redis → RAG/reranking → LLM → monitoring → Docker → Kubernetes → AWS`
 
-## Learn
-- RAG retrieval/reranking review
-- structured outputs
-- evaluation
-- latency vs throughput
-- vLLM basics
-- continuous/dynamic batching concept
-- KV cache concept
-- quantization
-- GPU memory
-- model serving
-- autoscaling
-- observability
+### Day 1
+Build/review the baseline end-to-end flow.
 
-## Sources
-- vLLM docs: https://docs.vllm.ai/
-- vLLM examples: https://docs.vllm.ai/en/latest/examples/
-- Hugging Face Transformers: https://huggingface.co/docs/transformers/
-- MLflow: https://mlflow.org/docs/latest/
+### Day 2
+Load-test and identify the first bottleneck.
 
-Use a Hindi vLLM/LLM-serving video only as an introduction if terminology is unfamiliar. For actual implementation, use vLLM documentation because serving behavior, supported models and flags change quickly.
+### Day 3
+Optimize one bottleneck and benchmark before/after.
 
-## Build
-Add one serious AI workflow:
-`resume + JD → retrieval → reranking → LLM structured score → persistence → dashboard`
+### Day 4
+Introduce a dependency/pod failure and prove recovery.
 
-Measure:
-- p50/p95 latency
-- token/model cost assumptions
-- retrieval quality
-- failure rate
-- throughput
-- bottleneck
+### Day 5
+Measure AI quality, latency, throughput and cost.
 
-## AI-engineering focus — EXTREME
-This is where system context matters most. You must reason about:
-- model selection vs quality/cost
-- sync vs async inference
-- batching
-- concurrency
-- GPU memory
-- caching
-- retries/timeouts
-- fallback models
-- rate limits
-- evaluation gates
-- autoscaling thresholds
-- observability
+### Day 6
+Produce architecture decision records and a final cost/performance report.
 
-## Architecture exercise
-Write a one-page decision record:
-1. Why this model?
-2. Why this retrieval strategy?
-3. Why this database/vector strategy?
-4. Why this serving stack?
-5. What is the cost/request assumption?
-6. What breaks first at 10× traffic?
-7. What changes at 100×?
+### Day 7
+Final interview-style architecture review.
 
-## KPI / exit test
-You can trace one request end-to-end, identify the slowest/most expensive component, and propose a measured optimization rather than blindly adding infrastructure.
+**Final question:** Given 100k documents, 200 requests/sec and p95 <2s, what architecture do you choose, what breaks first, how do you measure it, and what changes at 10× traffic?
+
+**KPI:** Trace one request end-to-end and defend the architecture, scaling strategy, reliability controls and cost assumptions.
