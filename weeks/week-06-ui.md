@@ -1,30 +1,27 @@
-# Week 6 — Async APIs + Queues
+# Week 6 — CI/CD + Testing
 
-**Dates:** 25 Sep–1 Oct 2026  
-**Priority:** P0  
-**Time:** 10–12 hours
+**Priority:** P0
 
-## Learn
-- FastAPI async I/O
-- background workers
-- queue semantics
-- retries/backoff
-- dead-letter queues
-- idempotency keys
-- job status APIs
-- graceful shutdown
-- timeouts and cancellation
+### Day 1
+GitHub Actions basics. Source: https://docs.github.com/en/actions
+Build lint + unit-test workflow.
 
-## Sources
-- FastAPI async docs: https://fastapi.tiangolo.com/async/
-- Celery docs: https://docs.celeryq.dev/
-- AWS SQS docs: https://docs.aws.amazon.com/sqs/
+### Day 2
+Integration tests for FastAPI + database/queue boundaries.
 
-## Build
-Resume ingestion API: upload → object storage → queue → worker → parse/embed → DB → status endpoint.
+### Day 3
+Build Docker image in CI and run tests before publishing.
 
-## KPI
-Explain when a task belongs in the request path and when it belongs in a queue. Demonstrate retry without duplicate processing.
+### Day 4
+Image registry, versioning and immutable deployment tags.
 
-## AI-engineering focus
-EXTREME: reliable orchestration is a core AI product skill.
+### Day 5
+Deployment strategies: rolling, blue/green, canary; rollback design.
+
+### Day 6
+Secrets/configuration and safe environment promotion.
+
+### Day 7
+Deliberately deploy a broken version and perform rollback.
+
+**KPI:** Explain the path from commit → test → image → deployment → rollback.
