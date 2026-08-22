@@ -1,31 +1,29 @@
-# Week 15 — LLM Inference + vLLM
+# Week 15 — AI System Design Interview Mastery
 
-**Dates:** 27 Nov–3 Dec 2026  
-**Priority:** P0 / highest-value specialization  
-**Time:** 10–12 hours
+**Priority:** P0
 
-## Learn
-- serving architecture
-- latency vs throughput
-- concurrency
-- KV cache
-- continuous batching concept
-- quantization
-- GPU memory
-- model selection
-- autoscaling
-- fallback models
+## Daily method
+For each prompt: clarify workload → baseline → bottleneck → scale → reliability → observability → cost → trade-offs.
 
-## Sources
-- vLLM docs: https://docs.vllm.ai/
-- vLLM examples: https://docs.vllm.ai/en/latest/examples/
-- Transformers: https://huggingface.co/docs/transformers/
+### Day 1
+Design AI resume processing for 10 → 10,000 users.
 
-## Build
-Serve a model locally with vLLM where hardware permits. Compare direct/API inference vs served inference for latency and throughput.
+### Day 2
+Design RAG for 100k documents.
 
-## KPI
-Explain what limits throughput, what consumes GPU memory, and when batching/quantization/model changes are justified.
+### Day 3
+Design asynchronous document ingestion.
 
-## AI-engineering focus
-EXTREME. This is the bridge from LLM application engineering to inference engineering.
+### Day 4
+Design a multi-tenant AI API with tenant isolation.
+
+### Day 5
+Design a model-serving platform.
+
+### Day 6
+Design AI monitoring/evaluation infrastructure.
+
+### Day 7
+Whiteboard one complete architecture from memory and defend every component.
+
+**KPI:** Ask for missing workload assumptions before proposing architecture and justify every major component.
