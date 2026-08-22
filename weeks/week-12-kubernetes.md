@@ -1,34 +1,27 @@
-# Week 12 — AWS + Kubernetes Deployment
+# Week 12 — LLM Inference + vLLM
 
-**Dates:** 6–12 Nov 2026  
-**Priority:** P0  
-**Time:** 10–12 hours
+**Priority:** P0
+Source: https://docs.vllm.ai/
 
-## Learn
-- ECR → workload image flow
-- EKS architecture
-- ALB/Ingress
-- IAM for workloads
-- RDS connectivity
-- S3 access
-- CloudWatch
-- secrets/configuration
-- cost controls
+### Day 1
+Inference basics: tokens, latency, throughput, concurrency.
 
-## Sources
-- EKS docs: https://docs.aws.amazon.com/eks/
-- EKS Workshop: https://www.eksworkshop.com/
+### Day 2
+Continuous batching and why batching changes GPU utilization.
 
-## Build
-Target: Internet → ALB → EKS → FastAPI → RDS/Redis/S3.
+### Day 3
+KV cache and GPU memory.
 
-If EKS cost/permissions are unavailable, deploy the same service on ECS and document the trade-off.
+### Day 4
+Quantization and quality/performance trade-offs.
 
-## Failure lab
-Remove a permission, kill a pod, make the DB unreachable. Document detection and recovery.
+### Day 5
+Model serving with vLLM where hardware permits.
 
-## KPI
-Trace one request end-to-end and explain the security/network/data path.
+### Day 6
+Benchmark concurrency, latency, tokens/sec and memory.
 
-## AI-engineering focus
-EXTREME.
+### Day 7
+Compare hosted API vs self-hosted inference and justify the choice.
+
+**KPI:** Explain what limits inference throughput and what intervention changes the bottleneck.
