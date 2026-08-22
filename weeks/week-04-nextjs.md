@@ -1,31 +1,26 @@
-# Week 4 — Redis + Caching
+# Week 4 — Redis, Caching + Rate Limiting
 
-**Dates:** 11–17 Sep 2026  
-**Priority:** P0  
-**Time:** 8–10 hours
+**Priority:** P0
 
-## Learn
-- cache-aside pattern
-- TTL/invalidation
-- cache stampede
-- hot keys
-- rate limiting
-- sessions
-- Redis data structures
-- when NOT to cache
+### Day 1
+Redis keys, TTL, common data structures. Source: https://redis.io/docs/latest/develop/
 
-## Sources
-- Redis docs: https://redis.io/docs/latest/
-- Redis caching tutorial: https://redis.io/docs/latest/develop/get-started/
+### Day 2
+Cache-aside pattern. Cache candidate/job reads and measure latency.
 
-## Build
-Add Redis caching to candidate search. Measure DB latency and cache hit/miss. Add a rate limiter.
+### Day 3
+Invalidation, stale data and TTL trade-offs.
 
-## Failure lab
-Turn Redis off. Decide whether requests fail, bypass cache or degrade gracefully.
+### Day 4
+Rate limiting concepts; implement a simple API limiter.
 
-## KPI
-Explain cache invalidation, stale data risk and why Redis improves the chosen workload.
+### Day 5
+Redis failure test: disable Redis and decide fail-open vs fail-closed behavior.
 
-## AI-engineering focus
-High: cache placement, TTL and failure behavior are architecture decisions.
+### Day 6
+Use Redis for AI result/request caching where correctness allows it.
+
+### Day 7
+Benchmark cache hit/miss latency and cost; document what should never be cached.
+
+**KPI:** Explain when Redis improves the system and what failure/consistency cost it introduces.
