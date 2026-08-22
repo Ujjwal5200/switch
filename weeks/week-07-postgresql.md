@@ -1,33 +1,27 @@
-# Week 7 — Docker for Production AI Services
+# Week 7 — Kubernetes Core for AI APIs
 
-**Dates:** 2–8 Oct 2026  
-**Priority:** P0  
-**Time:** 8–10 hours
+**Priority:** P0
+Source: https://kubernetes.io/docs/tutorials/kubernetes-basics/
 
-## Learn
-- image vs container
-- Dockerfile
-- multi-stage builds
-- networks/volumes
-- environment/secrets handling
-- health checks
-- Compose
-- container resource limits
-- image size/security basics
+### Day 1
+Pods + Deployments. Deploy the FastAPI AI API.
 
-## Source
-Docker getting started: https://docs.docker.com/get-started/
+### Day 2
+Services + service discovery.
 
-Hindi optional: use a recent Hindi Docker course only for first-pass terminology; then use Docker docs for implementation.
+### Day 3
+ConfigMaps + Secrets; externalize configuration safely.
 
-## Build
-Containerize NextSwitch API + worker + PostgreSQL + Redis. Use Compose for local orchestration.
+### Day 4
+Readiness/liveness probes; deliberately break a probe.
 
-## Failure lab
-Kill/restart a worker and database. Verify health checks and recovery behavior.
+### Day 5
+Resource requests/limits and why AI workloads need explicit resource discipline.
 
-## KPI
-One command starts the local production-shaped stack and you can explain each container boundary.
+### Day 6
+Ingress and traffic routing.
 
-## AI-engineering focus
-High: container boundaries and resource limits matter more than Docker syntax.
+### Day 7
+Deploy the full API + worker stack from scratch without copy-paste.
+
+**KPI:** Explain why each Kubernetes object exists and what failure it handles.
