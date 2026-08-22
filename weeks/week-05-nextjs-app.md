@@ -1,35 +1,26 @@
-# Week 5 — Distributed Systems Fundamentals
+# Week 5 — Docker + Production Containers
 
-**Dates:** 18–24 Sep 2026  
-**Priority:** P0 / high career value  
-**Time:** 10–12 hours
+**Priority:** P0
 
-## Learn
-- concurrency vs parallelism
-- horizontal scaling
-- load balancing
-- queues/workers
-- synchronous vs asynchronous work
-- backpressure
-- retries/backoff
-- idempotency
-- timeouts
-- circuit breakers
-- eventual consistency
-- service boundaries
+### Day 1
+Docker mental model: image, container, process. Source: https://docs.docker.com/get-started/
 
-## Sources
-- AWS architecture guidance: https://docs.aws.amazon.com/whitepapers/latest/architecture-best-practices/
-- Martin Kleppmann distributed-systems talks/notes for conceptual study.
+### Day 2
+Dockerfile layers, build cache, environment configuration.
 
-## Build
-Turn document ingestion into an async workflow: API accepts job → queue → worker → status/result.
+### Day 3
+Containerize FastAPI + worker + Redis/PostgreSQL with Compose.
 
-## Failure lab
-Duplicate a job, stop a worker, and delay a dependency. Design idempotency and retry behavior.
+### Day 4
+Health checks, graceful shutdown and dependency readiness.
 
-## KPI
-Given 1,000 documents arriving at once, explain how the system avoids blocking the API and prevents duplicate processing.
+### Day 5
+CPU/memory limits, logs and container failure behavior.
 
-## AI-engineering focus
-EXTREME. This is architecture and orchestration, not framework syntax.
+### Day 6
+Security basics: non-root user, secrets outside images, minimal images.
+
+### Day 7
+Rebuild the full local AI API scale lab from containers only.
+
+**KPI:** Reproduce the application consistently and explain every container boundary.
