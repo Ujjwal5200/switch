@@ -1,47 +1,26 @@
-# Week 14 — AI Evaluation + Monitoring
+# Week 14 — AI Reliability Engineering
 
-**Dates:** 20–26 Nov 2026  
-**Priority:** P0  
-**Time:** 10–12 hours
+**Priority:** P0
 
-## Learn
-System health:
-- RPS
-- p50/p95/p99
-- errors
-- CPU/memory
-- DB latency/connections
-- queue depth
-- model latency
-- GPU utilization
+### Day 1
+Timeouts and bounded retries.
 
-AI quality:
-- precision@k
-- recall@k
-- MRR/NDCG
-- context relevance
-- answer relevance
-- faithfulness
-- hallucination rate
+### Day 2
+Circuit breakers and fallback models/providers.
 
-Cost:
-- tokens/request
-- model cost
-- embedding cost
-- infra cost
-- cost/successful task
+### Day 3
+Idempotency and duplicate-work prevention.
 
-## Sources
-- OpenTelemetry: https://opentelemetry.io/docs/
-- Prometheus: https://prometheus.io/docs/
-- Grafana: https://grafana.com/docs/
-- MLflow evaluation: https://mlflow.org/docs/latest/
+### Day 4
+Malformed LLM outputs: schema validation, retry and fallback.
 
-## Build
-Create a dashboard and evaluation dataset for your RAG/API. Add one system alert and one AI-quality regression check.
+### Day 5
+Dependency failure: kill Redis, PostgreSQL and LLM dependencies and observe recovery.
 
-## KPI
-When latency or quality degrades, identify the likely component and propose a measured change.
+### Day 6
+Rate limits, load shedding and graceful degradation.
 
-## AI-engineering focus
-EXTREME: monitoring is useful only when metrics map to decisions.
+### Day 7
+Build a failure matrix: failure → detection → impact → mitigation → recovery → permanent fix.
+
+**KPI:** Explain how your AI service behaves when every major dependency becomes unavailable.
