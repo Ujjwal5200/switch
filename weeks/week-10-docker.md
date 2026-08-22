@@ -1,34 +1,26 @@
-# Week 10 — Kubernetes Scaling + Failure Labs
+# Week 10 — RAG Scaling Foundations
 
-**Dates:** 23–29 Oct 2026  
-**Priority:** P0 / very high value  
-**Time:** 10–12 hours
+**Priority:** P0
 
-## Learn
-- HPA
-- CPU/memory signals
-- custom metrics concept
-- horizontal vs vertical scaling
-- pod disruption
-- graceful shutdown
-- load balancing
-- resource requests/limits
-- queue-based worker scaling
+### Day 1
+Build baseline RAG on 10 documents: chunk → embed → retrieve → generate.
 
-## Sources
-- Kubernetes HPA: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
-- Kubernetes resource management: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+### Day 2
+Create an evaluation set. Learn precision@k, recall@k, MRR, NDCG, context relevance and faithfulness.
 
-## Build
-Load-test FastAPI and scale 1 → 2 → 4 replicas. Add HPA. Separately scale workers based on queue depth concept.
+### Day 3
+Scale to 1,000 documents. Batch ingestion and add metadata filtering.
 
-## Scaling ladder
-1 user → baseline → 100 concurrent → 1,000 → defined 10,000-user workload.
+### Day 4
+Scale to 10,000 documents. Test ANN retrieval and compare latency.
 
-Never claim capacity without a traffic model.
+### Day 5
+Add reranking over a bounded candidate set. Measure quality vs latency.
 
-## KPI
-Produce a before/after report with RPS, p95 latency, error rate, CPU/memory and replica count.
+### Day 6
+Study hybrid retrieval, index versioning, tenant partitioning and caching.
 
-## AI-engineering focus
-EXTREME: diagnose the bottleneck before adding replicas.
+### Day 7
+Design 100k-document architecture and defend every component.
+
+**KPI:** Explain what changes at 10 → 1k → 10k → 100k documents and why.
