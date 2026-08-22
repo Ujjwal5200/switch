@@ -1,26 +1,47 @@
-# Week 1 — Frontend Literacy Fast Track
+# Week 1 — Distributed Systems + AI API Scale Lab
 
-**Dates:** 21–27 Aug 2026  
-**Priority:** P1 / supporting skill  
-**Time:** 4–6 hours total
+**Priority:** P0. This replaces the old frontend-first Week 1.
 
 ## Goal
-Do NOT become a JavaScript developer. Learn enough JS/TypeScript to read, review and modify AI-generated frontend code.
+Build one FastAPI AI-style API from zero and learn how workload, concurrency and horizontal scaling change its behavior.
 
-## Learn
-- JS: functions, objects, arrays, map/filter/reduce, destructuring, promises, async/await, fetch, modules.
-- TS: types, interface/type, unions, optional properties, function types, unknown, narrowing, generic basics, API response types.
+## Day 1 — Baseline
+Learn: distributed-system model, network latency, partial failure, vertical vs horizontal scaling.
+Source: https://www.youtube.com/watch?v=klUH2wqxzyw
+Build: `POST /generate` with a mock 1–2s AI delay.
+Test: k6 at 1/10/50/100 VUs. Record RPS, p50/p95/p99, errors, CPU/memory.
+Question: What is the current bottleneck?
 
-## Sources
-- MDN JS Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
-- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
-- Hindi TypeScript course: https://www.youtube.com/watch?v=oTam-6tHew4 — use only types, objects, unions, interfaces, functions, unknown, type guards, generics, promises/API sections.
+## Day 2 — Replicas
+Learn: stateless services, load balancing, health checks.
+Build: 2 FastAPI instances behind a local reverse proxy/load balancer.
+Measure 1 vs 2 instances.
+Question: Did throughput double? If not, why?
 
-## Build
-Create a tiny typed client that calls your FastAPI candidate endpoint and renders one candidate.
+## Day 3 — Async/concurrency
+Learn: concurrency vs parallelism, I/O-bound vs CPU-bound, async/await, workers.
+Build `/generate-sync` and `/generate-async` and load-test both.
+Question: Is the endpoint CPU-bound or I/O-bound? Prove it with measurements.
+
+## Day 4 — Queue + workers
+Learn: producer, consumer, queue, worker, queue depth.
+Build: FastAPI → Redis queue → worker → mock AI.
+Add `POST /jobs` and `GET /jobs/{id}`.
+Question: Why should long AI work leave the HTTP request path?
+
+## Day 5 — Reliability
+Learn: timeout, retry, exponential backoff, idempotency.
+Build job IDs, idempotency keys and bounded retries. Deliberately fail the AI call.
+Question: Can a retry create duplicate work or side effects?
+
+## Day 6 — Backpressure
+Learn: rate limiting, queue saturation, load shedding, producer/consumer mismatch.
+Overload workers deliberately and test rate limits/backpressure.
+Question: What should happen when traffic arrives faster than workers can process it?
+
+## Day 7 — Architecture review
+Design 10 → 1,000 → 10,000-user versions of the system.
+For every component document: problem → change → metric → trade-off → new bottleneck.
 
 ## KPI
-Read AI-generated TSX and explain the async flow, types and API contract without needing AI to explain basic syntax.
-
-## AI-engineering focus
-Low. Move on quickly once the KPI is met.
+You can explain and measure why a simple AI API needs replicas, queues, workers, retries and backpressure as workload increases. Do not move on because the calendar changed; carry weak topics forward.
