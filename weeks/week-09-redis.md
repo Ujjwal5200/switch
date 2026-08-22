@@ -1,32 +1,27 @@
-# Week 9 — Kubernetes Core for AI APIs
+# Week 9 — AWS Architecture + Deployment
 
-**Dates:** 16–22 Oct 2026  
-**Priority:** P0  
-**Time:** 10–12 hours
+**Priority:** P0
+Sources: https://skillbuilder.aws/ and https://docs.aws.amazon.com/
 
-## Learn
-- Pods
-- Deployments
-- Services
-- Ingress
-- ConfigMaps/Secrets
-- requests/limits
-- readiness/liveness
-- namespaces
-- rolling updates
+### Day 1
+IAM and least privilege. Design roles for API, worker and CI.
 
-## Sources
-- Kubernetes Basics: https://kubernetes.io/docs/tutorials/kubernetes-basics/
-- Workloads: https://kubernetes.io/docs/concepts/workloads/
+### Day 2
+VPC, subnets, routing and security groups. Draw public/private architecture.
 
-## Build
-Deploy FastAPI + worker + Redis to a local Kubernetes cluster (kind/minikube).
+### Day 3
+S3 + ECR. Store documents in S3 and publish images to ECR.
 
-## Failure lab
-Kill a pod. Break a readiness probe. Exceed resource limits. Observe recovery.
+### Day 4
+RDS PostgreSQL. Connect securely from compute.
 
-## KPI
-Explain the request path and why each Kubernetes object exists.
+### Day 5
+ALB + ECS vs EKS decision. Explain when Kubernetes is justified.
 
-## AI-engineering focus
-EXTREME: Kubernetes is being learned as an AI workload platform, not as a certification checklist.
+### Day 6
+CloudWatch logs/metrics and operational visibility.
+
+### Day 7
+Deploy the scale lab architecture and write a basic cost-aware design.
+
+**KPI:** Explain the AWS network/security path and justify each managed service.
