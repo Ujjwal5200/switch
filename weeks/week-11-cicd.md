@@ -1,30 +1,27 @@
-# Week 11 — AWS Architecture for AI Systems
+# Week 11 — AI Evaluation + Monitoring
 
-**Dates:** 30 Oct–5 Nov 2026  
-**Priority:** P0  
-**Time:** 10–12 hours
+**Priority:** P0
+Sources: https://opentelemetry.io/docs/ and https://prometheus.io/docs/
 
-## Learn
-- IAM
-- VPC/subnets/security groups
-- ALB
-- ECR
-- S3
-- RDS
-- CloudWatch
-- ECS vs EKS decision
-- cost estimation
+### Day 1
+System metrics: RPS, p50/p95/p99, errors, saturation.
 
-## Sources
-- AWS Architecture Center: https://aws.amazon.com/architecture/
-- AWS Well-Architected: https://aws.amazon.com/architecture/well-architected/
-- AWS learning: https://builder.aws.com/learn
+### Day 2
+Build an AI evaluation dataset and define expected behavior.
 
-## Build
-Draw a production architecture for NextSwitch. Deploy a low-cost component to AWS.
+### Day 3
+Measure retrieval precision@k, recall@k, MRR/NDCG.
 
-## KPI
-Explain the network/request path, IAM boundaries, data placement and expected cost drivers.
+### Day 4
+Measure answer relevance, context relevance, faithfulness and hallucination cases.
 
-## AI-engineering focus
-EXTREME: architecture, security and cost decisions cannot be delegated to AI.
+### Day 5
+Trace API → retrieval → model using OpenTelemetry.
+
+### Day 6
+Build a dashboard for system health, AI quality and token/cost signals.
+
+### Day 7
+Create a quality regression and detect it through telemetry.
+
+**KPI:** Explain what metric you monitor, why it matters, threshold, and action when it degrades.
