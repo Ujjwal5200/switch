@@ -1,30 +1,37 @@
-# Week 2 — React + Next.js Fast Track
+# Week 2 — Queues, Workers, Retries + Backpressure
 
-**Dates:** 28 Aug–3 Sep 2026  
-**Priority:** P1  
-**Time:** 5–7 hours
+**Priority:** P0
 
-## Learn
-- Components/JSX
-- props/state
-- useState/useEffect
-- forms/events
-- conditional rendering
-- API calls
-- Server vs Client Components concept
-- basic routing
+## Goal
+Turn the Day-1 API into a reliable asynchronous AI workload system.
 
-## Source
-Sheryians React course: https://www.youtube.com/watch?v=3LRZRSIh_KE
-Watch only Components, Props, Hooks, State, Forms, API Calls, useEffect, Router and Context sections. Skip projects.
+### Day 1 — Queue fundamentals
+Learn producer/consumer, queue depth, job lifecycle.
+Source: https://redis.io/docs/latest/develop/data-types/streams/
+Build FastAPI → Redis queue → worker.
+Question: What happens when producers outrun consumers?
 
-Official React TS reference: https://react.dev/learn/typescript
+### Day 2 — Job lifecycle
+Build `queued → processing → completed/failed` state tracking.
+Question: How does a client know when a long AI job finishes?
 
-## Build
-One candidate dashboard: table + search + API loading/error/empty states.
+### Day 3 — Retries
+Learn bounded retries, exponential backoff, transient vs permanent failure.
+Build retry policy and failure simulation.
+Question: When does retrying make an outage worse?
 
-## KPI
-Build and modify a React screen with AI assistance without getting blocked by basic component/state/API concepts.
+### Day 4 — Idempotency
+Build idempotency keys for document/AI jobs.
+Question: What happens if the same request is delivered twice?
 
-## AI-engineering focus
-Low. AI writes most UI boilerplate. You own API contract and UX state handling.
+### Day 5 — Dead-letter handling
+Build failed-job/DLQ behavior and replay.
+Question: Which failures should be retried automatically?
+
+### Day 6 — Backpressure + rate limits
+Overload workers, measure queue growth, add rate limiting/load shedding.
+Question: How do you keep overload from taking down the whole system?
+
+### Day 7 — Production review
+Document throughput, queue depth, worker capacity and failure behavior.
+KPI: Explain API → queue → worker architecture and its trade-offs.
