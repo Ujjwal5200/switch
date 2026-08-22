@@ -1,28 +1,28 @@
-# Week 8 — CI/CD + Deployment Discipline
+# Week 8 — Kubernetes Scaling + Failure Labs
 
-**Dates:** 9–15 Oct 2026  
-**Priority:** P0  
-**Time:** 8–10 hours
+**Priority:** P0
+Source: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+Load testing: https://grafana.com/docs/k6/latest/
 
-## Learn
-- CI vs CD
-- test/build/deploy stages
-- image tagging
-- secrets
-- environment promotion
-- rollback
-- health gates
-- GitHub Actions
+### Day 1
+Baseline one replica with k6. Record RPS/p95/p99/errors.
 
-## Sources
-- GitHub Actions: https://docs.github.com/en/actions
-- Docker CI/CD guide: https://docs.docker.com/build/ci/github-actions/
+### Day 2
+Scale 1 → 2 → 5 replicas. Measure whether scaling is linear.
 
-## Build
-Pipeline: push → tests → build image → scan/basic validation → deploy to a test environment → health check.
+### Day 3
+Configure HPA and choose a meaningful scaling signal.
 
-## KPI
-A bad build cannot reach deployment; a failed health check triggers a rollback/stop condition.
+### Day 4
+Kill pods during load; measure recovery.
 
-## AI-engineering focus
-High: deployment safety and rollback strategy are your decisions.
+### Day 5
+Create a PostgreSQL bottleneck and show why adding API replicas stops helping.
+
+### Day 6
+Create a worker/queue bottleneck and scale workers instead of API replicas.
+
+### Day 7
+Write a scaling report: workload, bottleneck, intervention, metric, result, trade-off.
+
+**KPI:** Never say "the system scales" without measurements.
