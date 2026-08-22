@@ -1,30 +1,26 @@
 # Week 3 — PostgreSQL Performance
 
-**Dates:** 4–10 Sep 2026  
-**Priority:** P0  
-**Time:** 8–10 hours
+**Priority:** P0
 
-## Learn
-- schema design
-- primary/foreign keys
-- joins
-- indexes
-- EXPLAIN / EXPLAIN ANALYZE
-- transactions/isolation basics
-- connection pooling
-- pagination
-- N+1 problems
-- migrations
+### Day 1
+Schema design: candidates, jobs, applications, skills. Source: https://www.postgresql.org/docs/current/tutorial.html
 
-## Sources
-- Hindi PostgreSQL course: https://www.youtube.com/watch?v=qw--VYLpxG4 — use only SQL/schema/index/transaction/query-performance sections.
-- PostgreSQL docs: https://www.postgresql.org/docs/
+### Day 2
+SQL joins, filtering, aggregation and pagination. Build realistic recruitment queries.
 
-## Build
-Create candidate/resume/JD tables. Add a deliberately slow search query. Use EXPLAIN ANALYZE, add an index, and compare latency.
+### Day 3
+Indexes: B-tree, composite indexes, selectivity, write overhead. Generate 100k+ rows.
 
-## KPI
-Explain exactly why the query got faster and when an index would hurt writes/storage.
+### Day 4
+`EXPLAIN ANALYZE`: sequential scan vs index scan, estimated vs actual rows, execution time.
 
-## AI-engineering focus
-High: data modeling and query trade-offs must be reasoned about, not blindly generated.
+### Day 5
+Transactions, isolation basics and connection pooling. Simulate concurrent API requests.
+
+### Day 6
+FastAPI + PostgreSQL integration, migrations and repository/service boundaries.
+
+### Day 7
+Load-test the API and produce a before/after query optimization report.
+
+**KPI:** Diagnose a slow query from evidence rather than guessing an index.
