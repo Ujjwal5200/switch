@@ -1,39 +1,26 @@
-# Week 13 — RAG Scaling
+# Week 13 — AI Cost Engineering
 
-**Dates:** 13–19 Nov 2026  
-**Priority:** P0 / AI specialization  
-**Time:** 10–12 hours
+**Priority:** P0
 
-## Learn
-Scale the same RAG system across:
-- 10 documents
-- 1,000
-- 10,000
-- 100,000+ where practical
+### Day 1
+Calculate token/model cost per request.
 
-Study:
-- chunking
-- embedding batching
-- metadata filtering
-- ANN indexes
-- hybrid retrieval
-- reranking
-- async ingestion
-- tenant partitioning
-- index versioning
-- cache strategy
-- evaluation datasets
+### Day 2
+Measure caching and avoided model calls.
 
-## Sources
-- Pinecone learning center: https://www.pinecone.io/learn/
-- pgvector: https://github.com/pgvector/pgvector
-- Elasticsearch relevance/RAG concepts: https://www.elastic.co/guide/
+### Day 3
+Model routing: small vs large model and quality trade-offs.
 
-## Build
-RAG Scale Lab. Measure ingestion time, index size, retrieval latency, recall@k, reranking latency, answer quality and cost.
+### Day 4
+Reduce unnecessary context and retrieval work.
 
-## KPI
-Explain what changes when document volume grows by 100× and which bottleneck appears first.
+### Day 5
+Batching/asynchronous processing for throughput and cost.
 
-## AI-engineering focus
-EXTREME. This is one of the highest-value interview and production topics.
+### Day 6
+Compare managed API vs CPU/GPU/self-hosted inference costs.
+
+### Day 7
+Write a cost report: quality vs latency vs cost/request.
+
+**KPI:** Given a workload, estimate cost and identify the highest-leverage optimization.
